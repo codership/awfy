@@ -9,14 +9,14 @@ submitter = Submitter(slave);
 
 submitter.Start();
 
-product = "mysql";
-product_revision = "1234";
-suite = "suite1";
-test = "test1";
+mode_name = "mysql_single";
+mode_revision = "1234";
+suite_name = "suite1";
+test_name = "test1";
 test_duration = 100;
 
-submitter.AddEngine(product, product_revision);
-submitter.SubmitTest(test_name, suite_name, "1.0", product_name, test_duration);
-submitter.SubmitTest("__total__", suite_name, "1.0", product_name, test_duration);
+submitter.AddMode(mode_name, mode_revision);
+submitter.SubmitTest(test_name, suite_name, "1.0", mode_name, test_duration);
+submitter.SubmitTest("__total__", suite_name, "1.0", mode_name, test_duration);
 submitter.Finish(1);
 

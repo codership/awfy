@@ -60,7 +60,7 @@ if (isset($_GET['run']) && $_GET['run'] == 'finish') {
     die();
 }
 
-if (isset($_GET['run']) && $_GET['run'] == 'addEngine') {
+if (isset($_GET['run']) && $_GET['run'] == 'addMode') {
     $runid = GET_run_id('runid');
     $mode_id = find_mode(GET_string('name'));
     $cset = mysql_real_escape_string(GET_string('cset'));

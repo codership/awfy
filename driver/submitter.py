@@ -59,12 +59,12 @@ class Submitter:
             except urllib2.URLError:
                 self.runIds[i] = None
 
-    def AddEngine(self, name, cset):
+    def AddMode(self, name, cset):
         for i in range(len(self.urls)):
             if not self.runIds[i]:
                 continue
 
-            args = { 'run': 'addEngine',
+            args = { 'run': 'addMode',
                      'runid': str(self.runIds[i]),
                      'name': name,
                      'cset': cset
