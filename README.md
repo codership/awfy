@@ -20,7 +20,7 @@ Create a database and import/run `database/schema.sql`.
 
 Data Collector
 --------------
-Drop `website/UPDATE.PHP` and `website/internals.php` somewhere, and rename `UPDATE.PHP` to something secret. Make sure you don't have directory listings enabled.
+Drop `website/submit.php` and `website/internals.php` somewhere, and rename `submit.php` to something secret. Make sure you don't have directory listings enabled.
 
 Benchmark Computers
 -------------------
