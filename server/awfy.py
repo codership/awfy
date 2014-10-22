@@ -19,17 +19,18 @@ path = None
 def Startup():
     global db, version, path
     config = ConfigParser.RawConfigParser()
-    config.read("/etc/awfy-server.config")
+    config.read("awfy-server.config")
 
     host = config.get('mysql', 'host')
-    user = config.get('mysql', 'user')
-    pw = config.get('mysql', 'pass')
-    name = config.get('mysql', 'name')
+    port = config.get('mysql', 'port')
+    user = config.get('mysql', 'username')
+    pw = config.get('mysql', 'password')
+    database = config.get('mysql', 'database')
 
     if host[0] == '/':
-        db = mdb.connect(unix_socket=host, user=user, passwd=pw, db=name, use_unicode=True)
+        db = mdb.connect(unix_socket=host, user=user, passwd=pw, db=database, use_unicode=True)
     else:
-        db = mdb.connect(host, user, pw, name, use_unicode=True)
+        db = mdb.connect(host, user, pw, database, use_unicode=True, port=int(port))
 
     c = db.cursor()
     c.execute("SELECT `value` FROM awfy_config WHERE `key` = 'version'")
